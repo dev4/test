@@ -1,0 +1,20 @@
+{
+  "name": "testExt",
+  "version": "0.1.0",
+  "description": "test.",
+  "browser_action": {
+    "default_title": "testExt"
+  },
+  "permissions": [ "tabs",  "http://*/*",  "https://*/*" ],
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js": [
+        "content.js"
+      ],
+      "run_at" : "document_start"
+    }
+  ]
+}
